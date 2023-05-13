@@ -1,0 +1,21 @@
+.product-details-btn {
+  bottom: 10px;
+  right: 10px;
+}
+
+.product-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details-btn {
+  background: var(--bs-orange);
+  border-color: snow;
+}

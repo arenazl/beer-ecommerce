@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-auto">
+      <a routerLink="/" class="btn  bg-transparent">
+        <i class="fas fa-arrow-left text-black"></i>
+      </a>
+    </div>
+    <div class="col text-center">
+      <h4>{{ product.brand }}</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <img [src]="product.image" class="img-fluid" alt="{{ product.brand }}" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2 class="text-black">{{ product.brand }}</h2>
+    </div>
+    <div class="col">
+      <h2 class="text-orange"> $ {{ product.price / 100 | number:'1.2-2' }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p>Origin: {{ product.origin }}</p>
+    </div>
+    <div class="col-6">
+      <p>Stock: {{ product.stock }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p class="text-darkgray">{{ product.information }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button *ngFor="let sku of product.skus" class="btn btn-outline-primary me-2" [ngClass]="{'fw-bold': sku.id === activeSku.id}" (click)="onSkuClick(sku)">
+        {{ sku.name }}
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-auto">
+      <button class="btn btn-outline-secondary">
+        <i class="fas fa-lock"></i>
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-orange text-white w-100">Add to cart</button>
+    </div>
+  </div>
+</div>
